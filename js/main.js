@@ -3,15 +3,15 @@
 	var attrArray = ["2022 GDP in Billions", "2023 GDP in Billions", "Percent of National 2022 GDP", "Percent of National 2023 GDP", "Median Household Income 2021"]; //list of attributes
 	var expressed = attrArray[0]; //initial attribute
 
-	//chart frame dimensions
-	var chartWidth = window.innerWidth * 0.35,
-		chartHeight = 350,
-		leftPadding = 33,
-		rightPadding = 2,
-		topBottomPadding = 5,
-		chartInnerWidth = chartWidth - leftPadding - rightPadding,
-		chartInnerHeight = chartHeight - topBottomPadding * 2,
-		translate = "translate(" + leftPadding + "," + topBottomPadding + ")";
+	// Chart frame dimensions (adjusted for smaller boxes)
+	var chartWidth = window.innerWidth * 0.30,  // Decrease from 45% to 30% of the window width
+	    chartHeight = 300,                     // Decrease height from 400px to 300px
+	    leftPadding = 20,                      // Reduce left padding for a tighter layout
+	    rightPadding = 20,                     // Adjust right padding
+	    topBottomPadding = 10,                 // Slightly increase top/bottom padding for balance
+	    chartInnerWidth = chartWidth - leftPadding - rightPadding,
+	    chartInnerHeight = chartHeight - topBottomPadding * 2,
+	    translate = "translate(" + leftPadding + "," + topBottomPadding + ")";
 
 	//create a scale to size bars proportionally to frame and for axis
 	var yScale = d3.scaleLinear()
