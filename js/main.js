@@ -5,17 +5,17 @@
 
 		//chart frame dimensions
 	var chartWidth = window.innerWidth * 0.45,
-		chartHeight = 473,
-		leftPadding = 33,
+		chartHeight = 360
+		leftPadding = 40
 		rightPadding = 2,
-		topBottomPadding = 5,
+		topBottomPadding = 10,
 		chartInnerWidth = chartWidth - leftPadding - rightPadding,
-		chartInnerHeight = chartHeight - topBottomPadding * 2,
+		chartInnerHeight = chartHeight - topBottomPadding * 1,
 		translate = "translate(" + leftPadding + "," + topBottomPadding + ")";
-
+		
 	//create a scale to size bars proportionally to frame and for axis
 	var yScale = d3.scaleLinear()
-		.range([450, 0])
+		.range([chartInnerHeight, 0])
 		.domain([0, 3700]);
 
 	//begin script when window loads
@@ -25,9 +25,9 @@
 	function setMap() {
 
 		//set map frame dimensions
-		var width = window.innerWidth * 0.5,
-			height = 460;
-			width = 900;
+		var width = window.innerWidth * 0.3,
+			height = 306;
+			width = 600;
 
 		//create new svg container for the map
 		var map = d3.select("body")
@@ -38,7 +38,7 @@
 
 		//projection generator
 		var projection = d3.geoAlbersUsa()
-			.scale(1000)
+			.scale(660)
 			.translate([width / 2, height / 2]);
 
 		//path generator
@@ -506,4 +506,4 @@
 			.style("top", y + "px");
 	};
 
-})(); //last line of main.js
+})();
