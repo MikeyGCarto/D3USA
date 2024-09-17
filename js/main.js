@@ -349,7 +349,7 @@
 
 		//adjust the yScale, based on min and max value
 		yScale = d3.scaleLinear()
-			.range([450, 0])
+			.range([chartInnerHeight, 0])
 			.domain([0, maxValue * 1.1]);
 
 		//apply update yScale to y axis
